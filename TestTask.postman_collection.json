@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "325f7a13-6711-46e8-a1fa-6ad1a0a67c47",
+		"name": "TestTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14430357"
+	},
+	"item": [
+		{
+			"name": "Bitcoin",
+			"item": [
+				{
+					"name": "Valid data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"config\": {\r\n\"address\": \"n41EfwsgK5tYL8W3pQBkQYDp1RBwf7FzWT\",\r\n\"privateKey\": \"cR1ePz3vmpPmurFtdEEqk923k25Ev3PUDopPiNXmtcU3yXj9nGQC\",\r\n\"wif\": true\r\n},\r\n\"data\": [\r\n{\r\n\"address\": \"mqbL56gM3e4dgJNFfBzkjaLFWf8oXMYtuT\",\r\n\"amount\": \"0.0000002\"\r\n}\r\n]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3023/bitcoin/transactions/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3023",
+							"path": [
+								"bitcoin",
+								"transactions",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Empty wallet",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"config\": {\r\n\"address\": \"mrNzYqCiMgNSBydscZXygvMVQE9yKfh2j8\",\r\n\"privateKey\": \"cV1gWUqDwtUp84Z5a6mhHM6KHobTAjXgKb9UhQ7KTVq6yVBmsYmi\",\r\n\"wif\": true\r\n},\r\n\"data\": [\r\n{\r\n\"address\": \"msiaDhNBdfTdWxdFmP1kLiPts2fhSTNb8f\",\r\n\"amount\": \"0.00006627\"\r\n}\r\n]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3023/bitcoin/transactions/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3023",
+							"path": [
+								"bitcoin",
+								"transactions",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Not enough coins",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"config\": {\r\n\"address\": \"mqbL56gM3e4dgJNFfBzkjaLFWf8oXMYtuT\",\r\n\"privateKey\": \"cNWrEsyyMrJy5cSbA2AZ2qZCNPF6WmmxMVHLzcxTDFw439peWpLS\",\r\n\"wif\": true\r\n},\r\n\"data\": [\r\n{\r\n\"address\": \"msiaDhNBdfTdWxdFmP1kLiPts2fhSTNb8f\",\r\n\"amount\": \"0.00006627\"\r\n}\r\n]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3023/bitcoin/transactions/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3023",
+							"path": [
+								"bitcoin",
+								"transactions",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid config.address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"config\": {\r\n\"address\": \"aa\",\r\n\"privateKey\": \"cNWrEsyyMrJy5cSbA2AZ2qZCNPF6WmmxMVHLzcxTDFw439peWpLS\",\r\n\"wif\": true\r\n},\r\n\"data\": [\r\n{\r\n\"address\": \"msiaDhNBdfTdWxdFmP1kLiPts2fhSTNb8f\",\r\n\"amount\": \"0.00006627\"\r\n}\r\n]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3023/bitcoin/transactions/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3023",
+							"path": [
+								"bitcoin",
+								"transactions",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid config.privateKey",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"config\": {\r\n\"address\": \"mqbL56gM3e4dgJNFfBzkjaLFWf8oXMYtuT\",\r\n\"privateKey\": \"sa\",\r\n\"wif\": true\r\n},\r\n\"data\": [\r\n{\r\n\"address\": \"msiaDhNBdfTdWxdFmP1kLiPts2fhSTNb8f\",\r\n\"amount\": \"0.00006627\"\r\n}\r\n]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3023/bitcoin/transactions/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3023",
+							"path": [
+								"bitcoin",
+								"transactions",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid data.address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"config\": {\r\n\"address\": \"mqbL56gM3e4dgJNFfBzkjaLFWf8oXMYtuT\",\r\n\"privateKey\": \"cNWrEsyyMrJy5cSbA2AZ2qZCNPF6WmmxMVHLzcxTDFw439peWpLS\",\r\n\"wif\": true\r\n},\r\n\"data\": [\r\n{\r\n\"address\": \"s\",\r\n\"amount\": \"0.00006627\"\r\n}\r\n]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3023/bitcoin/transactions/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3023",
+							"path": [
+								"bitcoin",
+								"transactions",
+								"send"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Litecoin",
+			"item": []
+		},
+		{
+			"name": "Valid data",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"config\": {\r\n\"address\": \"2Mtzdz47dx7LJpa9mqoL2w5YSaiZsygUGWM\",\r\n\"privateKey\": \"cNgdmdR81ZqUxqRL3EPygpqfZGPxYiuDDzon8iEzvADgWEV89Css\",\r\n\r\n\"wif\": true\r\n},\r\n\"data\": [\r\n{\r\n\"address\": \"mveJkWZzkP46mVeSmzWpuxEJq3UwWVBV48\",\r\n\"amount\": \"0.00003607\"\r\n}\r\n]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3023/litecoin/transactions/send",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3023",
+					"path": [
+						"litecoin",
+						"transactions",
+						"send"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
